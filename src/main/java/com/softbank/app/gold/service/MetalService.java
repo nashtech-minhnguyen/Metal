@@ -1,11 +1,10 @@
 package com.softbank.app.gold.service;
 
-import com.squareup.okhttp.Response;
-
 import java.io.IOException;
+import java.util.List;
 
 public interface MetalService {
 
-    Response getXAURate() throws IOException;
+  String getRates(String base, List<String> currencies) throws IOException;
 
 }
