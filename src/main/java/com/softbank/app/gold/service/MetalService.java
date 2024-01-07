@@ -11,4 +11,6 @@ public interface MetalService {
 
   void updateRates(String base);
 
+  MetalPriceApiDto getRates(String base);
+
 }

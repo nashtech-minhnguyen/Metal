@@ -1,8 +1,6 @@
-package com.softbank.app.gold.controller;
+package com.softbank.app.gold.controller.v1;
 
 import com.softbank.app.gold.service.MetalService;
-import com.squareup.okhttp.Response;
-import com.squareup.okhttp.ResponseBody;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +14,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/metals")
+@RequestMapping("/v1/metals")
 public class RatingController {
 
   private final MetalService metalService;
