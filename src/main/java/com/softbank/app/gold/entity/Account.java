@@ -1,9 +1,13 @@
 package com.softbank.app.gold.entity;
 
+import com.softbank.common.enums.Status;
 import lombok.Data;
+import lombok.NonNull;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,4 +27,7 @@ public class Account {
     @Column(name = "account_balance")
     private BigDecimal accountBalance;
 
+    @Column(name = "status")
+    @Enumerated(EnumType.STRING)
+    private Status status;
 }
