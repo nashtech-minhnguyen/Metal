@@ -17,9 +17,10 @@ public class AccountServiceImpl implements AccountService {
 
   @Override
   public void createAccount() {
-    Account account = new Account();
-    account.setAccountBalance(BigDecimal.ZERO);
-    account.setStatus(Status.ACTIVE);
+    Account account = new Account(Status.ACTIVE, "A");
+//    account.setAccountBalance(BigDecimal.ZERO);
+//    account.setStatus(Status.ACTIVE);
+//    account.setLinkedAccountCode("ABC");
     accountRepository.save(account);
   }
 }
