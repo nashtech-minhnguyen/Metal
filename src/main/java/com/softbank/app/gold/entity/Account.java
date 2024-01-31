@@ -34,8 +34,4 @@ public class Account {
     @Column(name = "linked_account_code")
     private String linkedAccountCode;
 
-    public Account(Status status, String linkedAccountCode) {
-        this.status = status;
-        this.linkedAccountCode = linkedAccountCode;
-    }
 }

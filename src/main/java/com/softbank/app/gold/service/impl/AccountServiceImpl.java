@@ -6,6 +6,7 @@ import com.softbank.app.gold.service.AccountService;
 import com.softbank.common.enums.Status;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 
@@ -16,11 +17,12 @@ public class AccountServiceImpl implements AccountService {
   private final AccountRepository accountRepository;
 
   @Override
-  public void createAccount() {
-    Account account = new Account(Status.ACTIVE, "A");
-//    account.setAccountBalance(BigDecimal.ZERO);
-//    account.setStatus(Status.ACTIVE);
-//    account.setLinkedAccountCode("ABC");
+  @Transactional
+  public void createAccount(String accountCode) {
+    Account account = new Account();
+    account.setStatus(Status.ACTIVE);
+    account.setAccountBalance(BigDecimal.ZERO);
+    account.setLinkedAccountCode(accountCode);
     accountRepository.save(account);
   }
 }
