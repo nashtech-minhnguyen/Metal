@@ -2,7 +2,9 @@ package com.softbank.app.gold.entity;
 
 import com.softbank.common.enums.Status;
 import lombok.Data;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,8 +18,10 @@ import java.math.BigDecimal;
 
 @Entity
 @Table(name = "money_accounts")
-@Data
-public class Account {
+@RequiredArgsConstructor
+@Getter
+@Setter
+public class Account extends Common {
 
     @Column(name = "id")
     @Id
