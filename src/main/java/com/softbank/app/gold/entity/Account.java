@@ -35,7 +35,7 @@ public class Account extends Common {
     @Enumerated(EnumType.STRING)
     private Status status;
 
-    @Column(name = "linked_account_code")
+    @Column(name = "linked_account_code", unique = true)
     private String linkedAccountCode;
 
 }

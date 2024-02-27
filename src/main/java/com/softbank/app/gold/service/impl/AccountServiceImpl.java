@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Service
 @RequiredArgsConstructor
@@ -23,6 +24,8 @@ public class AccountServiceImpl implements AccountService {
     account.setStatus(Status.ACTIVE);
     account.setAccountBalance(BigDecimal.ZERO);
     account.setLinkedAccountCode(accountCode);
+    account.setCreatedWhen(LocalDateTime.now());
+    account.setModifiedWhen(LocalDateTime.now());
     accountRepository.save(account);
   }
 }
