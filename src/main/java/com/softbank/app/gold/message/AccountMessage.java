@@ -10,12 +10,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class AccountMessage {
 
-  @Value("kafka.topic.create-account")
-  private String KAFKA_TOPIC_CREATE_ACCOUNT;
-
   private final AccountService accountService;
 
-  @KafkaListener(topics = "createAccount", groupId = "softbank")
+  @KafkaListener(topics = "${kafka.topic.create-account}", groupId = "softbank")
   public void listen(String accountCode) {
     accountService.createAccount(accountCode);
   }
